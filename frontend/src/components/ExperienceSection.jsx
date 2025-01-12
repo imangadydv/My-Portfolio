@@ -5,19 +5,9 @@ import ex from "../assets/exper.png";
 const ExperienceSection = () => {
   const experiences = [
     {
-      period: "Aug 2024 - Present",
-      title: "WEB DEVELOPER",
-      company: "Ai Pinnacle (NASTP), Rawalpindi, Pakistan",
-    },
-    {
-      period: "April 2024 - Present",
-      title: "WEB DEVELOPER",
-      company: "EESS Solutions, Remote (Karachi, Pakistan)",
-    },
-    {
-      period: "Jun 2021 - Present",
-      title: "FREELANCER",
-      company: "Fiverr",
+      period: "July 2024 - August 2024",
+      title: "Web Developer Intern",
+      company: "UNIFIED MENTOR",
     },
   ];
 

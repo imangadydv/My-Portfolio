@@ -2,7 +2,7 @@ import React from "react";
 
 const CodeBlock = () => {
   return (
-    <div className="bg-[#0f0b34] p-6 rounded-lg w-full lg:w-1/2 shadow-lg">
+    <div className="relative bg-[#0f0b34] p-6 rounded-lg w-full lg:w-1/2 shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:-translate-x-1 hover:rotate-1">
       <pre className="text-sm lg:text-base text-gray-300 overflow-x-auto">
         <span className="text-[#f9a826]">{`const`}</span> coder = {"{"}
         <br />
@@ -14,25 +14,23 @@ const CodeBlock = () => {
         <br />
         {"    "}
         <span className="text-[#16f2b3]">'React'</span>,{" "}
-        <span className="text-[#16f2b3]">'NextJS'</span>,{" "}
+        <span className="text-[#16f2b3]">'Html'</span>,{" "}
         <span className="text-[#16f2b3]">'Node'</span>,{" "}
         <span className="text-[#16f2b3]">'Express'</span>,
         <br />
         {"    "}
-        <span className="text-[#16f2b3]">'NestJS'</span>,{" "}
+        <span className="text-[#16f2b3]">'Redux'</span>,{" "}
         <span className="text-[#16f2b3]">'MySQL'</span>,{" "}
         <span className="text-[#16f2b3]">'MongoDB'</span>,{" "}
         <span className="text-[#16f2b3]">'JavaScript'</span>,
         <br />
         {"    "}
         <span className="text-[#16f2b3]">'Tailwind'</span>,{" "}
-        <span className="text-[#16f2b3]">'MaterialUI'</span>,{" "}
-        <span className="text-[#16f2b3]">'Python'</span>,{" "}
-        <span className="text-[#16f2b3]">'Java'</span>,
+        <span className="text-[#16f2b3]">'MaterialUI'</span>,
         <br />
         {"    "}
-        <span className="text-[#16f2b3]">'C#'</span>,{" "}
-        <span className="text-[#16f2b3]">'Kotlin'</span>
+        <span className="text-[#16f2b3]">'C++'</span>,{" "}
+        <span className="text-[#16f2b3]">'C'</span>
         <br />
         {"  "}
         ],

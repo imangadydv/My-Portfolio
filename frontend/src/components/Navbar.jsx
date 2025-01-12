@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import cg from "../assets/card.png";
 const Navbar = () => {
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.querySelector("nav");
+      if (window.scrollY > 50) {
+        navbar.classList.add("shadow-lg");
+      } else {
+        navbar.classList.remove("shadow-lg");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
   return (
     <nav className="flex justify-between items-center px-8 py-4 bg-[#0c0e1e] fixed top-0 left-0 w-full z-50 shadow-md" style={{
                 backgroundImage: "url(" + cg + ")",

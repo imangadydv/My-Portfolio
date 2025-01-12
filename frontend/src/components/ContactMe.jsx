@@ -3,19 +3,20 @@ import cg from "../assets/card.png";
 
 const ContactMe = () => {
   return (
-    <div className="min-h-screen bg-[#0c0e1e] text-white flex flex-col items-center py-16" style={{
+    <div id="contact" className="min-h-screen bg-[#0c0e1e] text-white flex flex-col items-center py-16" style={{
         backgroundImage: "url(" + cg + ")",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}>
       <h2 className="text-3xl font-bold text-[#16f2b3] mb-12">Contact Me</h2>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 px-8 lg:px-16 w-full lg:w-3/4">
-        {/* Contact Form */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 px-8 lg:px-16 w-full lg:w-3/4 ">
         <div className="bg-[#0f0b34] p-8 rounded-lg shadow-md">
           <h3 className="text-xl font-bold mb-6 text-[#16f2b3]">Send a Message</h3>
-          <form>
+          <form
+          action="https://getform.io/f/bnllmjxb"
+          method="POST"
+          >
             <div className="mb-6">
               <label htmlFor="name" className="block text-sm font-medium mb-2">
                 Name
@@ -23,6 +24,7 @@ const ContactMe = () => {
               <input
                 type="text"
                 id="name"
+                name="name"
                 placeholder="Your Name"
                 className="w-full p-3 bg-[#0c0e1e] border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#16f2b3]"
               />
@@ -34,6 +36,7 @@ const ContactMe = () => {
               <input
                 type="email"
                 id="email"
+                name="email"
                 placeholder="Your Email"
                 className="w-full p-3 bg-[#0c0e1e] border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#16f2b3]"
               />
@@ -45,6 +48,7 @@ const ContactMe = () => {
               <textarea
                 id="message"
                 rows="4"
+                name="message"
                 placeholder="Your Message"
                 className="w-full p-3 bg-[#0c0e1e] border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#16f2b3]"
               ></textarea>
@@ -57,19 +61,17 @@ const ContactMe = () => {
             </button>
           </form>
         </div>
-
-        {/* Contact Details */}
         <div className="flex flex-col justify-center items-start bg-[#0f0b34] p-8 rounded-lg shadow-md">
           <h3 className="text-xl font-bold mb-6 text-[#16f2b3]">Get in Touch</h3>
           <p className="text-gray-300 mb-4">
-            <strong>Email:</strong> your-email@example.com
+            <strong>Email:</strong> angad310501@gmail.com
           </p>
           <p className="text-gray-300 mb-4">
-            <strong>Phone:</strong> +123 456 7890
+            <strong>Phone:</strong> +91-6386091480
           </p>
           <div className="flex space-x-4 mt-4">
             <a
-              href="https://github.com/your-username"
+              href="https://github.com/imangadydv"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#16f2b3] text-2xl hover:text-white transition"
@@ -77,31 +79,31 @@ const ContactMe = () => {
               <i className="fab fa-github"></i>
             </a>
             <a
-              href="https://linkedin.com/in/your-username"
+              href="https://www.linkedin.com/in/imangadydv/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#16f2b3] text-2xl hover:text-white transition"
             >
               <i className="fab fa-linkedin"></i>
             </a>
-            <a
+            {/* <a
               href="https://twitter.com/your-username"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#16f2b3] text-2xl hover:text-white transition"
             >
               <i className="fab fa-twitter"></i>
-            </a>
-            <a
+            </a> */}
+            {/* <a
               href="https://facebook.com/your-username"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#16f2b3] text-2xl hover:text-white transition"
             >
               <i className="fab fa-facebook"></i>
-            </a>
+            </a> */}
             <a
-              href="https://instagram.com/your-username"
+              href="https://instagram.com/im_angadydv"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#16f2b3] text-2xl hover:text-white transition"

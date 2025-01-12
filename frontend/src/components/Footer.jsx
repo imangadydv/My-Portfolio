@@ -8,7 +8,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <p className="text-gray-600 text-sm">
-          © 2025 Your Name. All Rights Reserved.
+          © 2025 Angad Yadav. All Rights Reserved.
         </p>
       </div>
     </footer>
