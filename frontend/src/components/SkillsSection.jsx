@@ -68,13 +68,12 @@ const SkillsSection = () => {
         {skills.map((skill, index) => (
           <motion.div
             key={index}
-            className="relative flex flex-col items-center justify-center bg-[#0f0b34] p-6 rounded-lg shadow-md transform transition-transform hover:scale-105 group overflow-hidden"
+            className="relative flex flex-col items-center justify-center bg-[#0f0b34] p-6 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:border hover:border-[#16f2b3] hover:bg-[#1a1d4a]"
             variants={itemVariants}
             transition={{ duration: 0.6 }}
           >
-            <div className="absolute inset-0 bg-indigo-700 opacity-0 group-hover:opacity-50 transition-opacity duration-300 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-pink-500 before:to-transparent before:w-0 group-hover:before:w-full before:h-full before:transition-all before:duration-500"></div>
-            <div className="text-4xl text-[#16f2b3] mb-4 z-10">{skill.icon}</div>
-            <p className="text-[#16f2b3] text-lg font-semibold z-10">{skill.name}</p>
+            <div className="text-4xl text-[#16f2b3] mb-4">{skill.icon}</div>
+            <p className="text-[#16f2b3] text-lg font-semibold">{skill.name}</p>
           </motion.div>
         ))}
       </motion.div>

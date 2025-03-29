@@ -1,6 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
 import cg from "../assets/card.png";
+
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -11,62 +14,40 @@ const Navbar = () => {
         navbar.classList.remove("shadow-lg");
       }
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
   return (
-    <nav className="flex justify-between items-center px-8 py-4 bg-[#0c0e1e] fixed top-0 left-0 w-full z-50 shadow-md" style={{
-                backgroundImage: "url(" + cg + ")",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }} >
-      <h1 className="text-[#16f2b3] text-2xl font-bold cursor-pointer">Angad Yadav</h1>
-      <ul className="flex space-x-6 text-gray-300 text-sm uppercase">
-        <li>
-          <a
-            href="#about"
-            className="hover:text-[#16f2b3] cursor-pointer"
-          >
-            About
-          </a>
-        </li>
-        <li>
-          <a
-            href="#experience"
-            className="hover:text-[#16f2b3] cursor-pointer"
-          >
-            Experience
-          </a>
-        </li>
-        <li>
-          <a
-            href="#skills"
-            className="hover:text-[#16f2b3] cursor-pointer"
-          >
-            Skills
-          </a>
-        </li>
-        <li>
-          <a
-            href="#education"
-            className="hover:text-[#16f2b3] cursor-pointer"
-          >
-            Education
-          </a>
-        </li>
-        <li>
-          <a
-            href="#projects"
-            className="hover:text-[#16f2b3] cursor-pointer"
-          >
-            Projects
-          </a>
-        </li>
+    <nav
+      className="fixed top-0 left-0 w-full z-50 px-8 py-4 bg-[#0c0e1e] shadow-md flex justify-between items-center"
+      style={{
+        backgroundImage: "url(" + cg + ")",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <h1 className="text-[#16f2b3] text-2xl font-bold cursor-pointer">
+        Angad Yadav
+      </h1>
+      
+      <div className="md:hidden text-gray-300 text-2xl cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? <FiX /> : <FiMenu />}
+      </div>
+      
+      <ul
+        className={`absolute md:static top-16 left-0 w-full md:w-auto md:flex space-x-6 text-gray-300 text-sm uppercase bg-[#0c0e1e] md:bg-transparent transition-all duration-300 ${
+          isOpen ? "block p-4" : "hidden"
+        } md:flex`}
+      >
+        {["About", "Experience", "Skills", "Education", "Projects"].map((item) => (
+          <li key={item} className="p-2 md:p-0">
+            <a href={`#${item.toLowerCase()}`} className="hover:text-[#16f2b3] cursor-pointer block">
+              {item}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );
