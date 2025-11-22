@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed top-0 left-0 w-full z-50 px-8 py-4 bg-[#0c0e1e] shadow-md flex justify-between items-center"
+      className="fixed top-0 left-0 w-full z-50 px-6 md:px-8 py-4 bg-[#0c0e1e] shadow-md flex justify-between items-center"
       style={{
         backgroundImage: `url(${cg})`,
         backgroundSize: "cover",
@@ -55,18 +55,19 @@ const Navbar = () => {
 
       <ul
         onClick={(e) => e.stopPropagation()}
-        className={`absolute md:static top-16 left-0 w-full md:w-auto 
-        flex flex-col md:flex-row text-gray-300 text-sm uppercase
-        bg-[#0c0e1e] md:bg-transparent transition-all duration-300 ease-in-out transform
-        ${isOpen ? "opacity-100 translate-y-0 p-4 space-y-4" : "opacity-0 -translate-y-4 pointer-events-none"} 
-        md:opacity-100 md:translate-y-0 md:pointer-events-auto
-        md:space-y-0 md:space-x-6`}
+        className={`absolute md:static top-full left-0 w-full md:w-auto
+          flex flex-col md:flex-row text-gray-300 text-sm uppercase
+          bg-[#0c0e1e] md:bg-transparent transition-all duration-300 ease-in-out transform
+          ${isOpen ? "opacity-100 translate-y-0 p-6 space-y-4" : "opacity-0 -translate-y-4 pointer-events-none"} 
+          md:opacity-100 md:translate-y-0 md:pointer-events-auto
+          md:space-y-0 md:space-x-6`}
+        style={{ zIndex: 49 }}
       >
         {["About", "Experience", "Skills", "Education", "Projects"].map((item) => (
           <li key={item} className="font-bold text-center md:text-center">
             <button
               onClick={() => handleScrollTo(item)}
-              className="hover:text-[#16f2b3] block relative group"
+              className="hover:text-[#16f2b3] block relative group w-full"
             >
               {item}
               <span className="absolute left-0 right-0 bottom-0 mx-auto h-[2px] w-0 bg-[#16f2b3] transition-all duration-300 group-hover:w-full"></span>

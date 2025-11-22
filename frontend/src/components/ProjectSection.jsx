@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -8,13 +7,13 @@ const ProjectsSection = () => {
       title: "FoodKalash",
       description:
         "A full-stack food delivery website with menu browsing, order placement, and donation features, ensuring a seamless user experience.",
-      link: "https://github.com/imangadydv/FoodKalash",
+      link: "https://foodkalashdelivery.onrender.com/",
     },
     {
       title: "Neural AI",
       description:
         "A ChatGPT-inspired AI chatbot application built using the MERN stack, offering real-time conversational interactions with a smart, user-friendly interface.",
-      link: "https://github.com/imangadydv/neuralAi",
+      link: "https://neuralai-8f6y.onrender.com/",
     },
     {
       title: "Job Portal",
@@ -38,14 +37,14 @@ const ProjectsSection = () => {
       title: "ToDo(Redux)",
       description:
         "A Redux-powered task manager allowing users to add, update, and track tasks efficiently.",
-      link: "https://github.com/imangadydv/todoredux",
+      link: "https://todoredux-kv8f.onrender.com/",
     },
     {
       title: "E-Commerce",
       description:
         "A feature-rich e-commerce platform offering seamless buying and selling experiences.",
       link: "https://github.com/imangadydv/e-commerce",
-    }
+    },
   ];
 
   const containerVariants = {
@@ -61,7 +60,10 @@ const ProjectsSection = () => {
   };
 
   return (
-    <div id="projects" className="min-h-screen bg-[#0c0e1e] text-white flex flex-col items-center py-16">
+    <div
+      id="projects"
+      className="min-h-screen bg-[#0c0e1e] text-white flex flex-col items-center py-16"
+    >
       <motion.h2
         className="text-3xl font-bold text-[#16f2b3] mb-12"
         initial={{ opacity: 0, y: -20 }}
@@ -76,31 +78,26 @@ const ProjectsSection = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-8 lg:px-16"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-8 lg:px-16 w-full"
       >
         {projects.map((project, index) => (
-          <motion.div
+          <motion.a
             key={index}
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
             variants={cardVariants}
-            whileHover={{ scale: 1.05, rotateX: 8, rotateY: -8 }}
+            whileHover={{ scale: 1.05, rotateX: 5, rotateY: -5 }}
             transition={{ type: "spring", stiffness: 180, damping: 10 }}
             className="relative group bg-[#0f0b34] p-6 rounded-xl shadow-lg overflow-hidden
-             border border-transparent hover:border-[#16f2b3] hover:shadow-[#16f2b3]/30"
+              border border-transparent hover:border-[#16f2b3] hover:shadow-[#16f2b3]/30 no-underline"
+            style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-all duration-500 bg-gradient-to-r from-[#16f2b3] to-transparent blur-xl"></div>
 
             <h3 className="text-xl font-bold text-[#16f2b3]">{project.title}</h3>
             <p className="text-gray-300 mt-4 leading-relaxed">{project.description}</p>
-
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-block underline text-[#16f2b3] hover:text-white transition-all"
-            >
-              View Project
-            </a>
-          </motion.div>
+          </motion.a>
         ))}
       </motion.div>
     </div>
@@ -108,4 +105,3 @@ const ProjectsSection = () => {
 };
 
 export default ProjectsSection;
-
