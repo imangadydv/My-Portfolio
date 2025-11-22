@@ -18,9 +18,9 @@ const App = () => {
         <Navbar />
         <PortfolioHero />
         <AboutSection />
+         <ExperienceSection />
         <EducationSection />
         <SkillsSection />
-        <ExperienceSection />
         <ProjectsSection />
         <ContactMe />
         <Footer />

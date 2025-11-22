@@ -1,84 +1,150 @@
+// import React from "react";
+// import { motion } from "framer-motion";
+// import { FaReact, FaNodeJs, FaGitAlt, FaHtml5, FaCss3Alt, FaJava, FaDatabase } from "react-icons/fa";
+// import { SiTailwindcss, SiJavascript, SiRedux, SiExpress, SiMongodb, SiPostman, SiCplusplus, SiStrapi, SiNextdotjs } from "react-icons/si";
+// import { MdOutlineDesignServices } from "react-icons/md";
+// import bg from "../assets/hero.svg";
+
+// const SkillsSection = () => {
+//   const skills = [
+//     { name: "C++", icon: <SiCplusplus /> },
+//     { name: "JavaScript", icon: <SiJavascript /> },
+//     { name: "React", icon: <FaReact /> },
+//     { name: "Next.js", icon: <SiNextdotjs /> },
+//     { name: "Node.js", icon: <FaNodeJs /> },
+//     { name: "Express", icon: <SiExpress /> },
+//     { name: "Tailwind", icon: <SiTailwindcss /> },
+//     { name: "MongoDB", icon: <SiMongodb /> },
+//     { name: "SQL", icon: <FaDatabase /> },
+//     { name: "Redux", icon: <SiRedux /> },
+//     { name: "Strapi", icon: <SiStrapi /> },
+//     { name: "Git & GitHub", icon: <FaGitAlt /> },
+//     { name: "Postman", icon: <SiPostman /> },
+//     { name: "Material-UI", icon: <MdOutlineDesignServices /> },
+//     { name: "HTML", icon: <FaHtml5 /> },
+//     { name: "CSS", icon: <FaCss3Alt /> },
+//   ];
+
+//   return (
+//     <div
+//       id="skills"
+//       style={{
+//         backgroundImage: `url(${bg})`,
+//         backgroundSize: "cover",
+//         backgroundPosition: "center",
+//         backgroundRepeat: "no-repeat",
+//       }}
+//       className="min-h-screen bg-[#0c0e1e] text-white flex flex-col items-center py-20"
+//     >
+//       <motion.h2
+//         initial={{ opacity: 0, y: -20 }}
+//         whileInView={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.6 }}
+//         className="text-4xl font-bold text-[#16f2b3] mb-12"
+//       >
+//         Skills & Technologies
+//       </motion.h2>
+
+//       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 px-6 lg:px-20">
+//         {skills.map((skill, index) => (
+//           <motion.div
+//             key={index}
+//             initial={{ opacity: 0, scale: 0.7 }}
+//             whileInView={{ opacity: 1, scale: 1 }}
+//             transition={{ duration: 0.4, delay: index * 0.05 }}
+//             className="bg-[#0f0b34]/70 backdrop-blur-md p-6 rounded-xl shadow-xl 
+//                        hover:scale-105 transition-all duration-300 text-center border border-[#16f2b3]/20 hover:border-[#16f2b3]"
+//           >
+//             <div className="text-4xl text-[#16f2b3] mb-2 flex justify-center">{skill.icon}</div>
+//             <p className="text-[#16f2b3] text-md font-semibold">{skill.name}</p>
+//           </motion.div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default SkillsSection;
 import React from "react";
 import { motion } from "framer-motion";
-import { FaReact, FaNodeJs, FaGitAlt, FaHtml5, FaCss3Alt, FaJava, FaDatabase } from "react-icons/fa";
-import { SiTailwindcss, SiJavascript, SiRedux, SiExpress, SiMongodb, SiPostman, SiCplusplus } from "react-icons/si";
-import { MdOutlineDesignServices } from "react-icons/md";
-import bg from "../assets/hero.svg";
+import { FaCode, FaRocket, FaUserGraduate, FaCheckCircle } from "react-icons/fa";
 
-const SkillsSection = () => {
-  const skills = [
-    { name: "C++", icon: <SiCplusplus /> },
-    { name: "JavaScript", icon: <SiJavascript /> },
-    { name: "React", icon: <FaReact /> },
-    { name: "Node.js", icon: <FaNodeJs /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-    { name: "Git & GitHub", icon: <FaGitAlt /> },
-    { name: "Data Structures & Algorithms", icon: <FaJava /> },
-    { name: "SQL", icon: <FaDatabase /> },
-    { name: "Redux", icon: <SiRedux /> },
-    { name: "Express", icon: <SiExpress /> },
-    { name: "MongoDB", icon: <SiMongodb /> },
-    { name: "Material-UI", icon: <MdOutlineDesignServices /> },
-    { name: "HTML", icon: <FaHtml5 /> },
-    { name: "CSS", icon: <FaCss3Alt /> },
-    { name: "C", icon: <FaJava /> },
-    { name: "Postman", icon: <SiPostman /> },
-  ];
+const timeline = [
+  {
+    phase: "Foundation",
+    period: "2021 - 2022",
+    skills: "C, C++, DSA, Problem Solving",
+    icon: <FaUserGraduate />,
+  },
+  {
+    phase: "Web Development",
+    period: "2022 - 2023",
+    skills: "HTML, CSS, JavaScript, React, Tailwind",
+    icon: <FaCode />,
+  },
+  {
+    phase: "Full-Stack Development",
+    period: "2023 - 2024",
+    skills: "Node.js, Express, MongoDB, Redux, Postman",
+    icon: <FaRocket />,
+  },
+  {
+    phase: "Advanced & Industry",
+    period: "2024 - Present",
+    skills: "Next.js, Strapi, Performance Optimization",
+    icon: <FaCheckCircle />,
+  },
+];
 
-  const containerVariants = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0 },
-  };
-
+const SkillsTimeline = () => {
   return (
-    <div
-      id="skills"
-      style={{
-        backgroundImage: `url(${bg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-      className="min-h-screen bg-[#0c0e1e] text-white flex flex-col items-center py-16"
-    >
-      <motion.h2
-        className="text-3xl font-bold text-[#16f2b3] mb-12"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+    <div id="skills" className="relative w-full bg-[#0c0e1e] text-white py-16 overflow-hidden">
+<motion.h2
+        initial={{ opacity: 0, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-4xl font-bold text-center text-[#16f2b3] mb-14"
       >
-        Skills
+        My Skill Journey
       </motion.h2>
+      {/* Background glowing line */}
+      <div className="absolute left-1/2 top-[120px] w-1 h-[80%] bg-gradient-to-b from-[#16f2b3] to-transparent animate-glow" />
 
-      <motion.div
-        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 px-8 lg:px-16"
-        variants={containerVariants}
-        initial="hidden"
-        animate="show"
-      >
-        {skills.map((skill, index) => (
+
+      
+
+      <div className="relative w-full max-w-5xl mx-auto space-y-12 px-6">
+
+        {timeline.map((item, index) => (
           <motion.div
             key={index}
-            className="relative flex flex-col items-center justify-center bg-[#0f0b34] p-6 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:border hover:border-[#16f2b3] hover:bg-[#1a1d4a]"
-            variants={itemVariants}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
+            className={`flex items-center gap-6 ${
+              index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+            }`}
           >
-            <div className="text-4xl text-[#16f2b3] mb-4">{skill.icon}</div>
-            <p className="text-[#16f2b3] text-lg font-semibold">{skill.name}</p>
+            <div className="text-4xl bg-[#16f2b3] text-[#0c0e1e] p-4 rounded-full shadow-lg">
+              {item.icon}
+            </div>
+
+            <div className="bg-[#0f0b34] p-6 rounded-xl shadow-xl w-full max-w-md hover:scale-[1.02] transition-all duration-300">
+              <p className="text-[#16f2b3] text-sm font-semibold">{item.period}</p>
+              <h3 className="text-xl font-bold mt-1">{item.phase}</h3>
+             <p className="text-[#16f2b3] font-bold mt-2 text-[16px] tracking-wide drop-shadow-[0_0_6px_#16f2b3]">
+  {item.skills}
+</p>
+
+            </div>
           </motion.div>
         ))}
-      </motion.div>
+
+      </div>
     </div>
   );
 };
 
-export default SkillsSection;
+export default SkillsTimeline;
+
+
